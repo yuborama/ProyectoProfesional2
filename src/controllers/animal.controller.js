@@ -15,8 +15,16 @@ adminctrl.rederAlltype=async (req,res)=>{
     res.render('animals/registre_animal',{tipos})
 }
 
-adminctrl.rederNewanimal=(req,res)=>{
+adminctrl.RederNewAnimal=(req,res)=>{
     res.render('animals/new_animal')
+}
+
+adminctrl.ActivateAnimal=(req,res)=>{
+    res.render('Activar animal')
+}
+
+adminctrl.DeactivateAnimal=(req,res)=>{
+    res.render('Desactivar animal')
 }
 
  module.exports = adminctrl;

@@ -22,10 +22,13 @@ petsctrl.createNewPet = async (req,res)=>{
   res.redirect('/user/my_pets')
 }
 
-petsctrl.ModificPet = (req,res)=>{
-    res.send('modifica mascota');
+petsctrl.ModificPet = async (req,res)=>{
+    const tipos = await Animal.find().lean();
+    const pet = await Pet.findById(req.params.id).lean();
+    console.log(pet);
+    res.render('pets/editpet',{tipos,pet})
 }
-
+           
 petsctrl.HistoryPet = (req,res)=>{
     res.send('Historia de mi mascota');
 }

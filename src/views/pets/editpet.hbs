@@ -1,10 +1,13 @@
+<h1>editando mascota</h1>
+<p>{{pet}}</p>
 <div class="card" style="width: 300px;">
   <div class="card-divider center">
-  Nuevo mascota
+  Editando mascota
   </div>
     <div class="card-section">
-    <form action='/user/new_pet' method="POST">
-    <input type="text" name="nombre" placeholder="Nombre">
+    <form action="/user/edit-pet/{{pet.id}}?_method=PUT" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="text" name="nombre" placeholder="Nombre" value="{{pet.nombre}}">
     <select name="tipo">
     <option value=""></option>
     {{#each tipos}}
@@ -20,7 +23,7 @@
     <input type="radio" name="tamaño" value="mediano" checked>Mediano
     <input type="radio" name="tamaño" value="pequeño">Pequeño</label>
     </div>
-    <textarea name="descripcion" rows="5" cols="5" placeholder="una caracteristicas de tu mascota"></textarea>
+    <textarea name="descripcion" rows="5" cols="5" placeholder="una caracteristicas de tu mascota">{{pet.descripcion}}</textarea>
   <button class="button" type="submit" value="Submit">Subir</button>
 </form>
   </div>

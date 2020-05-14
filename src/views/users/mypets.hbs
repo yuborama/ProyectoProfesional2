@@ -1,4 +1,6 @@
+
 <h1>Mys pets</h1>
+
 {{#each mascotas}}
 <div class="card" style="width: 300px;">
   <div class="card-divider center">
@@ -7,13 +9,15 @@
   <div class="card-section">
       <div class="row" style="display: flex;">
           <div class="cell small-4" style="width: 80px; height: 80px; background-color: blue;"></div>
-          <div class="cell small-8" style="padding: 0%;">
-              <h6>    {{sexo}}</h6>
-              <h6>   {{tamaño}}</h6>
-              <h6>   {{tipo}}</h6>
+          <div class="cell small-8" style="padding:  0px 5% 0px;">
+              <h6 style="padding:  0px 5% 0px;">{{sexo}}</h6>
+              <h6 style="padding:  0px 5% 0px;">{{tamaño}}</h6>
+              <h6 style="padding:  0px 5% 0px;">{{tipo}}</h6>
          </div>
       </div>
-</form>
+    <div>
+      <a href="/user/modific_pet/{{_id}}"><i class="fas fa-pencil-alt 2x"></i></a>
+    </div>
   </div>
 </div>
  {{/each}}
