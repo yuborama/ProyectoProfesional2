@@ -5,7 +5,7 @@
   Editando mascota
   </div>
     <div class="card-section">
-    <form action="/user/edit-pet/{{pet.id}}?_method=PUT" method="POST">
+    <form action="/user/modific_pet/{{pet._id}}?_method=PUT" method="POST">
     <input type="hidden" name="_method" value="PUT">
     <input type="text" name="nombre" placeholder="Nombre" value="{{pet.nombre}}">
     <select name="tipo">

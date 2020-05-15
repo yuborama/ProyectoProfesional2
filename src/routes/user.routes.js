@@ -11,7 +11,8 @@ const {
     createNewPet,
     ListAllPets,
     ListAlltype,
-    ModificPet
+    ModificPet,
+    UpdatePet
  } = require('../controllers/pet.controller');
 
 
@@ -28,6 +29,8 @@ router.get('/admin/add_animal', rederNewanimal);
 
 
  router.get('/user/modific_pet/:id', ModificPet);
+ router.put('/user/modific_pet/:id', UpdatePet);
+ router.delete('/user/prueba', ModificPet);
 
  //citas -------------------------------------------
 router.get('/user/new_cite', rederAlltype);

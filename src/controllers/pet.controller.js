@@ -28,6 +28,11 @@ petsctrl.ModificPet = async (req,res)=>{
     console.log(pet);
     res.render('pets/editpet',{tipos,pet})
 }
+
+petsctrl.UpdatePet = async (req,res)=>{
+    console.log(req.body);
+    res.send('actualizando')
+}
            
 petsctrl.HistoryPet = (req,res)=>{
     res.send('Historia de mi mascota');
