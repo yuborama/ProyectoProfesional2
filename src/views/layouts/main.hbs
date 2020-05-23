@@ -6,23 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- Compressed CSS -->
-<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">-->
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">-->
     <!--my css-->
     <link rel="stylesheet" href="/css/foundation.css">
     <link rel="stylesheet" href="/css/mystyle.css">
     <script src="https://kit.fontawesome.com/a8db0f5241.js" crossorigin="anonymous"></script>
 </head>
-<body>
-<!--{{>navigation}}-->
-      <div class="center"> 
-{{{body}}}
-    </div> 
-<!-- this will include every plugin and utility required by Foundation -->
 
-<script src="/js/vendor/jquery.js"></script>
-<script src="/js/vendor/what-input.js"></script>
-<script src="/js/vendor/foundation.js"></script>
-<script src="/js/myscript.js"></script>
+<body>
+    {{>navigation}}
+    <!-- <div class="center"> -->
+    {{>messages}}
+    {{{body}}}
+    <!--</div> -->
+    <!-- this will include every plugin and utility required by Foundation -->
+
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/what-input.js"></script>
+    <script src="/js/vendor/foundation.js"></script>
+    <script src="/js/myscript.js"></script>
 </body>
 
 </html>

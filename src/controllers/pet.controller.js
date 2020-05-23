@@ -19,6 +19,7 @@ petsctrl.createNewPet = async (req,res)=>{
   const NewPet= new Pet({nombre,sexo,tamaño,tipo,descripcion})
   console.log(NewPet);
   await NewPet.save();
+  res.flash('success_msg','Mascota agregada')
   res.redirect('/user/my_pets')
 }
 
