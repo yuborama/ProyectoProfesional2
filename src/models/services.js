@@ -3,16 +3,20 @@ const { Schema, model } = require("mongoose");
 const ServiceSchema = new Schema(
   {
     Nombre: {
-        type: Nombre,
-        required: true
-    },  
+      type: String,
+      required: true
+    },
+    Precio: {
+      type: Number,
+      required: true
+    },
     descripcion: {
-        type: String,
-        required: false
-      },
+      type: String,
+      required: false
+    },
     activo: {
-        type: Boolean,
-        required: false
+      type: Boolean,
+      required: false
     },
   },
   {

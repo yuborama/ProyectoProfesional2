@@ -4,11 +4,11 @@ const CiteSchema = new Schema(
   {
    
     pet: {
-        type: Integer,
+        type: String,
         required: true
     },  
     servicio: {
-      type: Integer,
+      type: String,
       required: true
     },
     descripcion: {

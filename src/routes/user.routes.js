@@ -15,6 +15,11 @@ const {
     UpdatePet
  } = require('../controllers/pet.controller');
 
+const{
+   NewCite,
+   CreateCite
+} = require('../controllers/cite.controller')
+
 
 //tipos de animales------------------------------------------------
 router.post('/animals/new_animal', createNewtype);
@@ -33,9 +38,11 @@ router.get('/admin/add_animal', rederNewanimal);
  router.delete('/user/prueba', ModificPet);
 
  //citas -------------------------------------------
-router.get('/user/new_cite', rederAlltype);
+router.get('/user/new_cite/:id', NewCite);
 
-router.get('/user/modific_cite/:id', rederAlltype);
+router.post('/user/new_cite', CreateCite);
+
+router.get('/user/modific_cite/', rederAlltype);
 
 router.get('/user/pet-history', rederAlltype);
 

@@ -9,9 +9,18 @@ const {
     ModifiCite
  } = require('../controllers/pet.controller');
 
- //preuba------------------------------------------
-// router.get('/user/new_pet', rederAlltype);
+const{
+    createService,
+    addService,
+    ListServices,
+    ChangeEstateService
+} = require('../controllers/service.controller')
 
+ //servicies------------------------------------------
+router.get('/admin/all_services', ListServices);
+router.get('/admin/new_service', createService);
+router.post('/admin/new_service', addService);
+router.get('/admin/estatechange/:id', ChangeEstateService)
 /////////------------------------------------------
 
 

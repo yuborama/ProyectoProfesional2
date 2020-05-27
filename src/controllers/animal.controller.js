@@ -3,7 +3,7 @@ const Animal = require('../models/animals');
 
 
 adminctrl.createNewtype = async(req,res)=>{
-    const {tipo,descripcion}=req.body;
+  const {tipo,descripcion}=req.body;
   const NewAmimal= new Animal({tipo,descripcion})
   await NewAmimal.save();
   res.render('animals/registre_animal')

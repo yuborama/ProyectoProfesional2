@@ -1,7 +1,7 @@
 const petsctrl={};
 const Pet = require('../models/pets');
-
-
+const service = require('../models/services');
+const cite = require('../models/cites');
 
 petsctrl.createNewPet = async (req,res)=>{
   const {nombre,sexo,tamaño,tipo,descripcion}=req.body;
@@ -18,9 +18,20 @@ petsctrl.HistoryPet = (req,res)=>{
     res.send('Historia de mi mascota');
 }
 
-petsctrl.NewCite = (req,res)=>{
-    res.send('Estoy sacando mi cita');
+petsctrl.NewCite = async (req,res)=>{
+    const servicios = await service.find().lean();
+    res.render('cites/new_cite',{servicios})
+    
 }
+petsctrl.CreateCite = async (req,res)=>{
+  const  pet='dsfghgsd'
+  const { servicio,Fecha,descripcion}=req.body;
+  const Newcite= new cite({pet,servicio,Fecha,descripcion})
+  console.log(Newcite);
+  await Newcite.save();
+  res.redirect('/user/my_pets')    
+}
+
 
 petsctrl.ModifiCite = (req,res)=>{
     res.send('Estoy modificando mi cita');

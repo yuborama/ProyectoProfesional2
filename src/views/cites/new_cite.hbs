@@ -1,0 +1,18 @@
+<div class="card" style="width: 300px;">
+  <div class="card-divider center">
+  Nueva cita
+  </div>
+  <div class="card-section">
+    <form action='/user/new_cite' method="POST">
+    <select name="servicio">
+    <option value=""></option>
+    {{#each servicios}}
+    <option value="{{_id}}">{{Nombre}}</option>
+    {{/each}}
+    </select>
+      <input type="date" name="Fecha" placeholder="dd/mm/yyyy">
+    <textarea name="descripcion" rows="10" cols="30" placeholder="Añada un descripcion"></textarea>
+  <button class="button" type="submit" value="Submit">Guardar</button>
+</form>
+  </div>
+</div>
