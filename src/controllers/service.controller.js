@@ -10,6 +10,7 @@ Servicectrl.addService =async (req,res)=>{
   const {Nombre,descripcion,Precio}=req.body;
   const NewService= new Service({Nombre,Precio,descripcion,activo})
   await NewService.save();
+  req.flash('success_msg','servicio agregado');
   res.redirect('/admin/all_services');
 }
 
