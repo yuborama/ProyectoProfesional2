@@ -8,13 +8,18 @@ passport.use(new localstrategy({
     passwordField: 'password'
 },async (email, password, done) => {
     //consulta a la db 
+    console.log('revisa el usuario');
     const user = await User.findOne({ email })
+    console.log('despues de revisar el usuario');
     if (!user) {
+        console.log('el usuario no existe');
         return done(null, false, { message: 'el usuario no existe' })
     } else {
-        const macht= await User.matchPassword(password)
+        console.log('revisando contraseña del usuario');
+        const macht= await user.matchPassword(password)
+        console.log('despues de revisar contraseña');
         if(macht){
-            return done(null,User)
+            return done(null,user)
         }else{
             return done(null,false,{message: 'Contraseña incorrecta'})
         }

@@ -1,6 +1,7 @@
-const indexctrl = {};
+const passport = require('passport')
 const Userctrl={};
 const User = require('../models/users');
+
 
 Userctrl.renderSingup = (req, res) => {
     const rol = 'Usuario'
@@ -15,9 +16,11 @@ Userctrl.renderNAdmin = (req, res) => {
     res.render('users/singup', { rol })
 }
 
-Userctrl.Singin = (req, res) => {
-    res.render('users/singup')
-}
+Userctrl.signin = passport.authenticate('local', {
+    successRedirect: '/user/my_pets',
+    failureRedirect: '/singin',
+    failureFlash: true
+  });
 
 Userctrl.NewUser = async (req, res) => {
     const { nombre, email,rol, password } = req.body;
