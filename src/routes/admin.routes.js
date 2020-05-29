@@ -16,9 +16,17 @@ const{
     ChangeEstateService
 } = require('../controllers/service.controller')
 
+const{
+    renderNAdmin,
+    renderNVeterinary
+}=require('../controllers/user.controller')
+
+
  //servicies------------------------------------------
 router.get('/admin/all_services', ListServices);
 router.get('/admin/new_service', createService);
+router.get('/admin/new_veterinary',renderNVeterinary);
+router.get('/admin/new_admin',renderNAdmin);
 router.post('/admin/new_service', addService);
 router.get('/admin/estatechange/:id', ChangeEstateService)
 /////////------------------------------------------

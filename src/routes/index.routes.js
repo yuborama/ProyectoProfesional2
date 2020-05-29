@@ -1,13 +1,26 @@
 const express = require("express");
 const router = express.Router();
 
-const { rederIndex, rederAbout,rederSingup,Singup } = require('../controllers/index.controller');
+const { rederIndex, rederAbout,rederSingin } = require('../controllers/index.controller');
+
+const { NewUser,renderSingup } = require('../controllers/user.controller');
+
+
 
 router.get('/', rederIndex);
 
+
+
 router.get('/about',rederAbout);
 
-router.get('/singup',rederSingup);
-router.post('/singup',Singup);
+router.get('/new_user',renderSingup);
+router.get('/singin',rederSingin);
+
+
+//router.post('/singup',Singup);
+//router.post('/singin',Singin);
+
+router.post('/singup',NewUser);
+
 
 module.exports=router;
