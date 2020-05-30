@@ -19,7 +19,10 @@ const PetSchema = new Schema(
       type: String,
       required: true
     },
-    
+    user:{
+        type:String,
+        required:true
+    },
     descripcion: {
       type: String,
       required: false

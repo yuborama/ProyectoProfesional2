@@ -9,7 +9,7 @@ petsctrl.ListAlltype= async (req,res)=>{
 }
 
 petsctrl.ListAllPets= async (req,res)=>{
-    const mascotas = await Pet.find().lean();
+    const mascotas = await Pet.find({user: req.user.id}).lean();
     res.render('users/mypets',{mascotas})
 }
 
@@ -17,15 +17,20 @@ petsctrl.createNewPet = async (req,res)=>{
   const {nombre,sexo,tamaño,tipo,descripcion}=req.body;
   console.log(req.body);
   const NewPet= new Pet({nombre,sexo,tamaño,tipo,descripcion})
+  NewPet.user= req.user.id;
   console.log(NewPet);
   await NewPet.save();
-  res.flash('success_msg','Mascota agregada')
+  req.flash('success_msg','Mascota agregada')
   res.redirect('/user/my_pets')
 }
 
 petsctrl.ModificPet = async (req,res)=>{
     const tipos = await Animal.find().lean();
     const pet = await Pet.findById(req.params.id).lean();
+    if (pet.user !=req.user.id) {
+        req.flash('error_msg','solo uedes modificar tus mascotas')
+        res.redirect('/user/my_pets')
+    }
     console.log(pet);
     res.render('pets/editpet',{tipos,pet})
 }

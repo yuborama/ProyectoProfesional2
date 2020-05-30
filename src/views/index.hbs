@@ -1,1 +1,17 @@
+{{#if user}}
+<h1>logueado</h1>
+{{#Autention user}}
+{{#if rolus}}
+<h1>usuario</h1>
+{{/if}}
+{{#if rolve}}
+<h1>veterinario</h1>
+{{/if}}
+{{#if rolad}}
+<h1>admin</h1>
+{{/if}}
+{{/Autention}}
+{{else}}
+{{calculation 50}}
 <h1>index</h1>
+{{/if}}

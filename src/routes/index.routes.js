@@ -10,7 +10,6 @@ const { NewUser,renderSingup,signin,logout } = require('../controllers/user.cont
 router.get('/', rederIndex);
 
 
-
 router.get('/about',rederAbout);
 
 router.get('/new_user',renderSingup);

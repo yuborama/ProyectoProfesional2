@@ -18,7 +18,23 @@ app.engine('.hbs', exphbs({
   defaultLayout: 'main',
   layoutsDir: path.join(app.get('views'), 'layouts'),
   partialsDir: path.join(app.get('views'), 'partials'),
+  helpers:{
+    calculation: function(value){
+      return value+7;
+    },
+    Autention: function(value,options){
+      if (value.rol=="Usuario") {
+        return options.fn({rolus:true, rolve:false,rolad:false});  
+      }else if (value.rol=="Veterinario") {
+        return options.fn({rolus:false, rolve:true,rolad:false});  
+      } else {
+        return options.fn({rolus:false, rolve:false,rolad:true});  
+      }
+      
+    }
+  },  
   extname: '.hbs'
+  
 }));
 app.set('view engine', '.hbs');
 
@@ -41,10 +57,7 @@ app.use((req, res, next) => {
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
   res.locals.user = req.user || null;
-  if(req.user!=null){
-   // console.log(req.user.rol);
-  }
-  next();
+   next();
 });
 
 // routes

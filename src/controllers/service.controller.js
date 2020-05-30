@@ -16,6 +16,7 @@ Servicectrl.addService =async (req,res)=>{
 
 Servicectrl.ListServices =async (req,res)=>{
   const servicios = await Service.find().lean();
+  console.log(servicios);
   res.render('services/all_services',{servicios})
 }
 
