@@ -20,27 +20,27 @@ const{
    CreateCite
 } = require('../controllers/cite.controller')
 
-
+const{Autentacion,Autentacionuser}=require('../helper/auth')
 //tipos de animales------------------------------------------------
-router.post('/animals/new_animal', createNewtype);
-router.get('/admin/add_animal', rederNewanimal);
+router.post('/animals/new_animal',Autentacionuser, createNewtype);
+router.get('/admin/add_animal',Autentacionuser, rederNewanimal);
 
  //Mascota------------------------------------------
- router.get('/user/my_pets', ListAllPets);
- router.get('/user/new_pet', ListAlltype);
+ router.get('/user/my_pets',Autentacionuser, ListAllPets);
+ router.get('/user/new_pet',Autentacionuser, ListAlltype);
 
 
- router.post('/user/new_pet', createNewPet);
+ router.post('/user/new_pet',Autentacionuser, createNewPet);
 
 
- router.get('/user/modific_pet/:id', ModificPet);
- router.put('/user/modific_pet/:id', UpdatePet);
- router.delete('/user/prueba', ModificPet);
+ router.get('/user/modific_pet/:id',Autentacionuser, ModificPet);
+ router.put('/user/modific_pet/:id',Autentacionuser, UpdatePet);
+ router.delete('/user/prueba',Autentacionuser, ModificPet);
 
  //citas -------------------------------------------
-router.get('/user/new_cite/:id', NewCite);
+router.get('/user/new_cite/:id',Autentacionuser, NewCite);
 
-router.post('/user/new_cite', CreateCite);
+router.post('/user/new_cite',Autentacionuser, CreateCite);
 
 router.get('/user/modific_cite/', rederAlltype);
 

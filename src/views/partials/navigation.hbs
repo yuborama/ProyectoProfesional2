@@ -7,16 +7,20 @@
   <div class="top-bar-right">
     <ul class="dropdown menu align-right" data-dropdown-menu>
       <li>
+        {{#if user}}
         <a href="">Pets</a>
         <ul class="menu  align-center">
           <li class="shrink"><a href="/user/my_pets">My Pets</a></li>
           <li class="shrink"><a href="/user/new_pet">New Pet</a></li>
         </ul>
       </li>
+      <li><a href="/logout">Cerrar sesion</a></li>
+      {{else}}
       <li><a href="#">Contactanos</a></li>
       <li><a href="/about">Somos nosotros</a></li>
       <li><a href="/singup">Registrarse</a></li>
       <li><a href="/singin">Ingresar</a></li>
+      {{/if}}
     </ul>
   </div>
 </div>
