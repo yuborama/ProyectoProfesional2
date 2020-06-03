@@ -8,13 +8,33 @@
     <ul class="dropdown menu align-right" data-dropdown-menu>
       <li>
         {{#if user}}
-        <a href="">Pets</a>
+        {{#Autention user}}
+        {{#if rolus}}
+        <a href="">Mis mascotas</a>
         <ul class="menu  align-center">
-          <li class="shrink"><a href="/user/my_pets">My Pets</a></li>
-          <li class="shrink"><a href="/user/new_pet">New Pet</a></li>
+          <li class="shrink"><a href="/user/my_pets">Mis mascotas</a></li>
+          <li class="shrink"><a href="/user/new_pet">Nueva mascota</a></li>
         </ul>
-      </li>
+        {{/if}}
+        {{#if rolve}}
+      <li class="shrink"><a href="/user/my_pets">Citas del dia</a></li>
+      {{/if}}
+      {{#if rolad}}
+      <a href="">Servicios</a>
+        <ul class="menu  align-center">
+          <li class="shrink"><a href="/admin/all_services">Servicios</a></li>
+          <li class="shrink"><a href="/admin/new_service">Nuevo Servicio</a></li>
+        </ul>
+      <a href="">Nuevos Usuarios</a>
+        <ul class="menu  align-center">
+           <li class="shrink"><a href="/admin/new_admin">Nuevo Admin</a></li>
+          <li class="shrink"><a href="/admin/new_veterinary">Nuevo Veterinario</a></li>
+          <li class="shrink"><a href="/new_user">Nuevo Usuario</a></li>
+        </ul>
+      {{/if}}
       <li><a href="/logout">Cerrar sesion</a></li>
+      {{/Autention}}
+      </li>
       {{else}}
       <li><a href="#">Contactanos</a></li>
       <li><a href="/about">Somos nosotros</a></li>
