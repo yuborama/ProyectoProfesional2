@@ -1,5 +1,4 @@
 const { Schema, model } = require("mongoose");
-
 const AnimalSchema = new Schema(
   {
     tipo: {
@@ -16,4 +15,4 @@ const AnimalSchema = new Schema(
   }
 );
 
-module.exports = model("Animal", AnimalSchema);
+module.exports = model('Animal', AnimalSchema);

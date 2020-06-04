@@ -21,6 +21,10 @@ const{
     renderNVeterinary
 }=require('../controllers/user.controller')
 
+const {
+    createNewtype
+}=require('../controllers/animal.controller')
+
 
  //servicies------------------------------------------
 router.get('/admin/all_services', ListServices);
@@ -37,7 +41,7 @@ router.get('/admin/new_admin',renderNAdmin);
 /////////------------------------------------------
 
  //no existe
-//router.post('/animals/new_animal', createNewtype);
+router.post('/animals/new_animal', createNewtype);
 //router.get('/admin/add_animal', rederNewanimal);
 
 module.exports=router;
