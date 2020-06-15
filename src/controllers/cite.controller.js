@@ -20,11 +20,12 @@ petsctrl.HistoryPet = (req,res)=>{
 
 petsctrl.NewCite = async (req,res)=>{
     const servicios = await service.find().lean();
-    res.render('cites/new_cite',{servicios})
-    
+    const pet= req.params.id;
+     console.log('id pet'+pet);
+    res.render('cites/new_cite',{servicios,pet})
 }
 petsctrl.CreateCite = async (req,res)=>{
-  const  pet='dsfghgsd'
+  const  pet = req.params.id;
   const { servicio,Fecha,descripcion}=req.body;
   const Newcite= new cite({pet,servicio,Fecha,descripcion})
   console.log(Newcite);

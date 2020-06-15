@@ -40,7 +40,7 @@ router.get('/admin/add_animal',Autentacionuser, rederNewanimal);
  //citas -------------------------------------------
 router.get('/user/new_cite/:id',Autentacionuser, NewCite);
 
-router.post('/user/new_cite',Autentacionuser, CreateCite);
+router.post('/user/new_cite/:id',Autentacionuser, CreateCite);
 
 router.get('/user/modific_cite/', rederAlltype);
 

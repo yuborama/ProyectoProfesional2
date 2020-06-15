@@ -3,7 +3,7 @@
   Nueva cita
   </div>
   <div class="card-section">
-    <form action='/user/new_cite' method="POST">
+    <form action='/user/new_cite/{{pet}}' method="POST">
     <select name="servicio">
     <option value=""></option>
     {{#each servicios}}

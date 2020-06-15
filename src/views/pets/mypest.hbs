@@ -1,0 +1,65 @@
+<h1>Mys pets</h1>
+<section class="lado grid-container fluid">
+    <div class="grid-x grid-padding-x">
+        <div class="cell small-6">
+            {{#each mascotas}}
+            <div class="pets">
+                <div class="card">
+                    <div class="card-divider">
+                        <div class="grid-container">
+                            <div class="grid-x grid-padding-x">
+                                <div class="cell small-1">
+                                    <a href="/user/modific_pet/{{_id}}"><i class="fas fa-pencil-alt 2x"></i></a>
+                                </div>
+                                <div class="cell small-5">
+                                    titulo
+                                </div>
+                                <div class="cell small-1">
+                                    <a href="/user/new_cite/{{_id}}"><i class="fas fa-pencil-alt 2x"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-section block">
+                        <div class="profile">
+                            <div class="img-avatar"></div>
+                        </div>
+                        <div class="grid-container">
+                            <div class="grid-x grid-padding-x text-center">
+                                <h6 class="cell small-4">macho</h6>
+                                <h6 class="cell small-4">grande</h6>
+                                <h6 class="cell small-4">gato</h6>
+                            </div>
+                        </div>
+                        <div class="tareas">
+                            <a class="button br15 G45g" href="#"><span class="G45g">+</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{#if citesM}}
+
+        <aside id="content" class="shirk" data-sticky-container>
+            <div class="sticky" data-sticky data-margin-top="0" data-top-anchor="content">
+                {{#each citesM}}
+                <div class="card">
+                    <div class="card_divider center">
+                        {{servicio.Nombre}}
+                    </div>
+                    <div class="card-section">
+                        {{pet.nombre}}
+                        <div class="grid-container">
+                            <a class="button tiny primary" href="#">Modificar</a>
+                            <a class="button tiny alert" href="#">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </aside>
+
+        {{/if}}
+    </div>
+</section>

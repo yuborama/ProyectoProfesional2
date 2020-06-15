@@ -1,4 +1,22 @@
-.center {
-    display: grid;
-    justify-content: center;
+/* --------------------------------------index---------------------------------------- */
+.img-parallax {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/inicio.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
+.img-parallax .row {
+    padding: 2rem;
+    position: absolute;
+    top: 50%;
+    display: block;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+/* --------------------------------------index---------------------------------------- */
