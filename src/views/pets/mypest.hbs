@@ -1,38 +1,63 @@
-<h1>Mys pets</h1>
+<div class="reveal" id="M-modific" data-reveal>
+    <h1>soy el modal de modificar</h1>
+    <p class="lead">Your couch. It is mine.</p>
+    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="reveal" id="M-Lcite" data-reveal>
+    <h1>soy el modal de las citas medicas</h1>
+    <p class="lead">Your couch. It is mine.</p>
+    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="reveal" id="M-Ncite" data-reveal>
+    <h1>soy el modal de la nueva cita medica</h1>
+    <p class="lead">Your couch. It is mine.</p>
+    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="reveal" id="M-Mcite" data-reveal>
+    <h1>soy el modal de modificar la cita medica</h1>
+    <p class="lead">Your couch. It is mine.</p>
+    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+
+<h1>Mis mascotas</h1>
 <section class="lado grid-container fluid">
     <div class="grid-x grid-padding-x">
-        <div class="cell small-6">
+        <div class="cell small-6 mypest align-center">
             {{#each mascotas}}
-            <div class="pets">
-                <div class="card">
-                    <div class="card-divider">
-                        <div class="grid-container">
-                            <div class="grid-x grid-padding-x">
-                                <div class="cell small-1">
-                                    <a href="/user/modific_pet/{{_id}}"><i class="fas fa-pencil-alt 2x"></i></a>
-                                </div>
-                                <div class="cell small-5">
-                                    titulo
-                                </div>
-                                <div class="cell small-1">
-                                    <a href="/user/new_cite/{{_id}}"><i class="fas fa-pencil-alt 2x"></i></a>
-                                </div>
-                            </div>
+            <div class="card">
+                <div class="card-divider d-flex cabecera-m">
+                    {{!-- <a href="/user/modific_pet/5ed9372891a4010190dd515f"><i class="fas fa-notes-medical"></i></a> --}}
+                    <a data-open="M-Lcite"><i class="fas fa-notes-medical"></i></a>
+                    <h2>{{nombre}}</h2>
+                    {{!--  <a href="/user/modific_pet/5ed9372891a4010190dd515f"><i class="fas fa-pencil-alt 2x"></i></a>  --}}
+                    <a data-open="M-modific"><i class="fas fa-pencil-alt 2x"></i></a>
+                </div>
+                <div class="card-section">
+                    <div class="profile">
+                        <div class="container-img">
                         </div>
                     </div>
-                    <div class="card-section block">
-                        <div class="profile">
-                            <div class="img-avatar"></div>
-                        </div>
-                        <div class="grid-container">
-                            <div class="grid-x grid-padding-x text-center">
-                                <h6 class="cell small-4">macho</h6>
-                                <h6 class="cell small-4">grande</h6>
-                                <h6 class="cell small-4">gato</h6>
-                            </div>
-                        </div>
-                        <div class="tareas">
-                            <a class="button br15 G45g" href="#"><span class="G45g">+</span></a>
+                    <div class="d-flex datos">
+                        <h4>{{sexo}}</h4>
+                        <h4>{{tamaño}}</h4>
+                        <h4>{{tipo.tipo}}</h4>
+                    </div>
+                    <div class="profile">
+                        <div class="figure">
+                           <a data-open="M-Ncite"> <i class="fas fa-plus fa-4x"> </i></a>
                         </div>
                     </div>
                 </div>
@@ -40,26 +65,37 @@
             {{/each}}
         </div>
         {{#if citesM}}
-
-        <aside id="content" class="shirk" data-sticky-container>
-            <div class="sticky" data-sticky data-margin-top="0" data-top-anchor="content">
-                {{#each citesM}}
-                <div class="card">
-                    <div class="card_divider center">
-                        {{servicio.Nombre}}
-                    </div>
-                    <div class="card-section">
-                        {{pet.nombre}}
-                        <div class="grid-container">
-                            <a class="button tiny primary" href="#">Modificar</a>
-                            <a class="button tiny alert" href="#">Eliminar</a>
+        <div id="content" class="cell small-6 services" data-sticky-container="">
+            <div class="stickY" data-sticky data-margin-top="0" data-top-anchor="content">
+                <div class="grid-container">
+                    <div class="grid-x grid-padding-x">
+                        {{#each citesM}}
+                        <div class="cell small-6">
+                            <div class="card">
+                                <div class="card-divider">
+                                    {{pet.nombre}}
+                                    {{!-- <a href="/user/modific_pet/5ed9372891a4010190dd515f">
+                                        <i class="fas fa-pencil-alt 2x"></i></a> --}}
+                                    <a data-open="M-Mcite"><i class="fas fa-pencil-alt 2x"></i></a>
+                                </div>
+                                <div class="card-section">
+                                    <h6> Servicio: {{servicio.Nombre}}</h6>
+                                    <h6>Asistir: {{Fecha}}</h6>
+                                    <div class="grid-container">
+                                        <div class="grid-x">
+                                            <div class="cell small-6">
+                                                <a class="button tiny expanded alert" href="#">Eliminar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        {{/each}}
                     </div>
                 </div>
-                {{/each}}
             </div>
-        </aside>
-
+        </div>
         {{/if}}
     </div>
 </section>

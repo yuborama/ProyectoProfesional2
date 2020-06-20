@@ -2,12 +2,17 @@ const adminctrl={};
 const Animal = require('../models/animals');
 
 
-adminctrl.createNewtype = async(req,res)=>{
-    const {tipo,descripcion}=req.body;
-  const NewAmimal= new Animal({tipo,descripcion})
-  await NewAmimal.save();
+/* adminctrl.createNewtype = async(req,res)=>{
+    console.log('----------------llega aca-----------------');
+    const {tipo,descripcion,color}=req.body;
+    const {image}=req.file
+    console.log(color);
+    console.log(image);
+  const NewAmimal= new Animal({tipo,color,descripcion,image})
+   await NewAmimal.save(); 
   res.render('animals/registre_animal')
 }
+*/
 
 adminctrl.rederAlltype=async (req,res)=>{
     const tipos = await Animal.find().lean();

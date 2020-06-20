@@ -22,8 +22,8 @@ const{
 
 const{Autentacion,Autentacionuser}=require('../helper/auth')
 //tipos de animales------------------------------------------------
-router.post('/animals/new_animal',Autentacionuser, createNewtype);
-router.get('/admin/add_animal',Autentacionuser, rederNewanimal);
+//router.post('/animals/new_animal',Autentacionuser, createNewtype);
+//router.get('/admin/add_animal',Autentacionuser, rederNewanimal);
 
  //Mascota------------------------------------------
  router.get('/user/my_pets',Autentacionuser, ListAllPets);

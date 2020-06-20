@@ -12,6 +12,8 @@ petsctrl.ListAlltype = async(req, res) => {
 petsctrl.ListAllPets = async(req, res) => {
     const mascotas = await Pet.find({ user: req.user.id }).populate({ path: 'tipo', select: 'tipo -_id' }).lean();
     const citesM = await Cite.find({ activa: true }).select('Fecha').populate({ path: 'pet', match: { user: req.user.id }, select: 'nombre' }).populate({ path: 'servicio', select: 'Nombre' }).lean();
+    console.log(mascotas)
+    console.log(citesM)
     res.render('pets/mypest', { mascotas, citesM })
 }
 

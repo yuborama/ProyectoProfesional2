@@ -1,3 +1,11 @@
+<div class="reveal" id="exampleModal1" data-reveal>
+    <h1>Awesome. I Have It.</h1>
+    <p class="lead">Your couch. It is mine.</p>
+    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
 <div class="img-parallax">
     <div class="grid-contrainer">
         <h3>el mejor ugar para tus mascotas</h3>
@@ -16,14 +24,26 @@
                         </div>
                     </div>
                     <div class="card-section">
-                        <h3>Especie</h3>
-                        <p>hola soy el animal 1</p>
-                        <a href="" class="button">Ver</a>
+                        <h3 id="especie">Especie perro</h3>
+                        <p> hola soy el animal 1</p>
+                        <a id="botonver" class="button" data-open="exampleModal1">Ver</a>
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="card-divider">
+                        <div class="img-avatar">
+                            <i class="fas fa-cat fa-4x"> </i>
+                        </div>
+                    </div>
+                    <div class="card-section">
+                        <h3 id="especie">Especie gato</h3>
+                        <p> hola soy el animal 2</p>
+                        <a id="botonver" class="button" data-open="exampleModal1">Ver</a>
+                    </div>
+                </div>
+            </div>
             <div class="swiper-slide">Slide 4</div>
             <div class="swiper-slide">Slide 5</div>
             <div class="swiper-slide">Slide 6</div>
@@ -89,14 +109,14 @@
             </div>
         </div>
         <div class="cell small-5 text-center">
-                <h2>Direccion y Horario </h2>
-                <h5>180 Main St Boston MA 021103</h5>
+            <h2>Direccion y Horario </h2>
+            <h5>180 Main St Boston MA 021103</h5>
             <h6 class="subheader">lunes 8am a 12pm - 2pm a 5 pm </h6>
             <h6 class="subheader">martes 8am a 12pm - 2pm a 5 pm </h6>
             <h6 class="subheader">miercoles 8am a 12pm - 2pm a 5 pm </h6>
             <h6 class="subheader"> jueves 8am a 12pm - 2pm a 5 pm </h6>
             <h6 class="subheader">viernes 8am a 12pm - 2pm a 5 pm </h6>
-            <h6 class="subheader" >sabado 8am a 12pm - 2pm a 5 pm </h6>
+            <h6 class="subheader">sabado 8am a 12pm - 2pm a 5 pm </h6>
             <h6 class="subheader">domingo 8am a 12pm - 2pm a 5 pm </h6>
             <a class="hollow button large" href="#">Contactar</a>
         </div>

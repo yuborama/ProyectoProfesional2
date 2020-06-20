@@ -6,6 +6,8 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const morgan = require('morgan');
+const multer = require('multer');
+
 
 // Initializations
 const app = express();
@@ -50,6 +52,28 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+
+const storage = multer.diskStorage({
+  destination: path.join(__dirname, 'public/uploads'),
+  filename: (req, file, cb) => {
+      cb(null, file.originalname);
+  }
+});
+
+app.use(multer({
+  storage,
+  dest: path.join(__dirname, 'public/uploads'),
+  limits: {fileSize: 2000000},
+  fileFilter: (req, file, cb) =>{
+      const filetypes = /jpeg|jpg|png|gif/;
+      const mimetype = filetypes.test(file.mimetype);
+      const extname = filetypes.test(path.extname(file.originalname));
+      if (mimetype & extname){
+          return cb(null, true);
+      }
+      cb("Error: Archivo debe ser una imagen validad");
+  }
+}).single('animal'));
 
 // Global Variables
 app.use((req, res, next) => {

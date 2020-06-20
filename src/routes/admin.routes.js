@@ -1,14 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-const {  
-    createNewPet,
-    ModificPet,
-    HistoryPet,
-    NewCite,
-    ModifiCite
- } = require('../controllers/pet.controller');
-
 const{
     createService,
     addService,
@@ -22,8 +14,10 @@ const{
 }=require('../controllers/user.controller')
 
 const {
+    RederNewAnimal,
     createNewtype
-}=require('../controllers/animal.controller')
+}=require('../controllers/animal.controller');
+const {  } = require("../controllers/admin.controller");
 
 
  //servicies------------------------------------------
@@ -38,10 +32,8 @@ router.get('/admin/new_veterinary',renderNVeterinary);
 router.get('/admin/new_admin',renderNAdmin);
 
 
-/////////------------------------------------------
 
- //no existe
 router.post('/animals/new_animal', createNewtype);
-//router.get('/admin/add_animal', rederNewanimal);
+router.get('/admin/add_animal', RederNewAnimal);
 
 module.exports=router;

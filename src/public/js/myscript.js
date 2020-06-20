@@ -1,3 +1,4 @@
+
 $(document).foundation()
 /*--------------------- index----------------------------  */
 /*----------------------------- sliders------------------------------- */
@@ -72,6 +73,21 @@ $(document).ready(function () {
 
 });
 /*----------------------------- sliders------------------------------- */
+/* modal--------------------------------- */
+$('#botonver').click(function(){
+    especie=document.getElementById('especie').innerText;
+    console.log('soy el item numero x');
+    console.log(especie);
+});
+
+$('#botonver').click(function(e){
+    const clickeado=document.getElementById('especie')
+    console.log(e.target.parentElement);
+    const data = e.target.parentElement
+    console.log(data.children[0]);
+})
+
+/* modal--------------------------------- */
 /*--------------------- index----------------------------  */
 
 

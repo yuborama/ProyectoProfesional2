@@ -1,12 +1,16 @@
-<div class="card" style="width: 300px;">
-  <div class="card-divider center">
-  Nuevo animal
-  </div>
-  <div class="card-section">
-    <form action='/animals/new_animal' method="POST">
-    <input type="text" name="tipo" placeholder="Nuevo tipo de animal">
-    <textarea name="descripcion" rows="10" cols="30" placeholder="Añada un descripcion"></textarea>
-  <button class="button" type="submit" value="Submit">Subir</button>
-</form>
+<div class="align-center"style="padding-top: 2rem">
+  <div class="card" style="width: 300px;">
+    <div class="card-divider center">
+      Nuevo animal
+    </div>
+    <div class="card-section" >
+      <form action='/animals/new_animal' method="POST" enctype="multipart/form-data">
+        <input type="text" name="tipo" placeholder="Nuevo tipo de animal">
+        <input type="color" name="color">
+        <input type="file" name="image">
+        <textarea name="descripcion" rows="5" cols="20" placeholder="Añada un descripcion"></textarea>
+        <button class="button" type="submit">Crear</button>
+      </form>
+    </div>
   </div>
 </div>
