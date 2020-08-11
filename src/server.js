@@ -73,7 +73,7 @@ app.use(multer({
       }
       cb("Error: Archivo debe ser una imagen validad");
   }
-}).single('animal'));
+}).single('image'));
 
 // Global Variables
 app.use((req, res, next) => {
@@ -88,6 +88,7 @@ app.use((req, res, next) => {
 app.use(require('./routes/index.routes'));
 app.use(require('./routes/admin.routes'));
 app.use(require('./routes/user.routes'));
+app.use(require('./routes/veterinario.routes'));
 // static files
 app.use(express.static(path.join(__dirname, 'public')));
 

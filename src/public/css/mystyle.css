@@ -29,6 +29,7 @@
 .btn, .img-avatar {
     height: 5em;
     width: 5em;
+    border-radius: 50%;
 }
 
 /* <button------------------------------- */
@@ -40,7 +41,7 @@
 .img-parallax {
     width: 100vw;
     height: 100vh;
-    background-image: url(../img/inicio.png);
+    background-image: url(../img/pichome.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -122,6 +123,21 @@
     border-radius: 10px 10px 0px 0px;
 }
 
-
-
 /*---------------------------------- my pest---------------------------------------- */
+/* ------------------------------------Veterinario------------------------------------ */
+/* >card citas-------------------- */
+.Redondearcard {
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 2px 2px 5px #b0bec5;
+}
+
+.Redondearcard-divider {
+    height: 50px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+
+
+
+
+/* ------------------------------------Veterinario------------------------------------ */

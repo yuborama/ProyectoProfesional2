@@ -4,9 +4,10 @@
       Nuevo Servico
     </div>
     <div class="card-section">
-      <form action='/admin/new_service' method="POST">
+      <form action='/admin/new_service' method="POST" enctype="multipart/form-data">
         <input type="text" name="Nombre" placeholder="Nuevo servicio">
         <input type="text" name="Precio" placeholder="Inserte valor">
+        <input type="file" name="image">
         <textarea name="descripcion" rows="5" cols="18" placeholder="Añada un descripcion"></textarea>
         <button class="button" type="submit" value="Submit">Guardar</button>
       </form>

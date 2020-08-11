@@ -4,20 +4,19 @@ const Animal = require('../models/animals');
 const Cite = require('../models/cites')
 
 
-petsctrl.ListAlltype = async(req, res) => {
+petsctrl.ListAlltype = async (req, res) => {
     const tipos = await Animal.find().lean();
     res.render('animals/new_pet', { tipos })
 }
 
-petsctrl.ListAllPets = async(req, res) => {
-    const mascotas = await Pet.find({ user: req.user.id }).populate({ path: 'tipo', select: 'tipo -_id' }).lean();
+petsctrl.ListAllPets = async (req, res) => {
+    const mascotas = await Pet.find({ user: req.user.id }).populate({ path: 'tipo', select: 'tipo color -_id' }).lean();
+    console.log(mascotas);
     const citesM = await Cite.find({ activa: true }).select('Fecha').populate({ path: 'pet', match: { user: req.user.id }, select: 'nombre' }).populate({ path: 'servicio', select: 'Nombre' }).lean();
-    console.log(mascotas)
-    console.log(citesM)
     res.render('pets/mypest', { mascotas, citesM })
 }
 
-petsctrl.createNewPet = async(req, res) => {
+petsctrl.createNewPet = async (req, res) => {
     const { nombre, sexo, tamaño, tipo, descripcion } = req.body;
     console.log(req.body);
     const NewPet = new Pet({ nombre, sexo, tamaño, tipo, descripcion })
@@ -28,7 +27,7 @@ petsctrl.createNewPet = async(req, res) => {
     res.redirect('/user/my_pets')
 }
 
-petsctrl.ModificPet = async(req, res) => {
+petsctrl.ModificPet = async (req, res) => {
     const tipos = await Animal.find().lean();
     const pet = await Pet.findById(req.params.id).lean();
     if (pet.user != req.user.id) {
@@ -39,9 +38,10 @@ petsctrl.ModificPet = async(req, res) => {
     res.render('pets/editpet', { tipos, pet })
 }
 
-petsctrl.UpdatePet = async(req, res) => {
-    console.log(req.body);
-    res.send('actualizando')
+petsctrl.UpdatePet = async (req, res) => {
+    const { nombre, sexo, tamaño, tipo, descripcion } = req.body;
+    await Pet.findByIdAndUpdate(req.params.id, { nombre, sexo, tamaño, tipo, descripcion})
+    res.redirect('/user/my_pets');
 }
 
 petsctrl.HistoryPet = (req, res) => {

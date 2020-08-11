@@ -4,7 +4,7 @@ const Animal = require('../models/animals');
 
 adminctrl.createNewtype = async (req, res) => {
     const { tipo, descripcion,color } = req.body;
-    image='../src/uploads/'+req.file.originalname;
+    image='/uploads/'+req.file.originalname;
     const NewAmimal = new Animal({tipo,image,color,descripcion})
     await NewAmimal.save();
     res.render('animals/new_animal')
@@ -14,6 +14,11 @@ adminctrl.rederAlltype = async (req, res) => {
     const tipos = await Animal.find().lean();
     console.log(tipos);
     res.render('animals/registre_animal', {tipos})
+}
+adminctrl.listadonimales = async (req, res) => {
+    const tipos = await Animal.find().lean();
+    console.log(tipos);
+    res.json(tipos)
 }
 
 adminctrl.RederNewAnimal = (req, res) => {

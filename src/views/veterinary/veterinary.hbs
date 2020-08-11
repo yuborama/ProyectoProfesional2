@@ -1,0 +1,42 @@
+<div class="grid-container">
+    <div class="grid-x grid-padding-x" style="padding-top: 3em;">
+        <div class="cell small-12">
+            <h1>Clientes</h1>
+        </div>
+        {{#each citesM}}
+        <div class="cell small-4">
+            <div class="card Redondearcard">
+                <div class="card-divider Redondearcard-divider flex-container align-center align-middle">
+                    <h4>{{servicio.Nombre}}</h4>
+                </div>
+                <div class="card-section">
+                    <div class="flex-container align-center">
+                        <h5>{{nombre}}</h5>
+                    </div>
+                    <div class="mascotas-data">
+                        <h5>Mascota</h5>
+                        <div class="flex-container align-justify">
+                            <p{{pet.sexo}}</p>
+                            <p>{{pet.tamaño}}</p>
+                        </div>
+                    </div>
+                    <div class="servicio">
+                        <h5>Servicio</h5>
+                        <p>{{descripcion}}</p>
+                    </div>
+                    <div class="actionesV">
+                        <div class="grid-container">
+                            <div class="grid-x grid-padding-x">
+                                <div class="cell small-6"><button class="button" style="width: 100%; ">Guardar</button>
+                                </div>
+                                <div class="cell small-6"><button class="button" style="width: 100%; background-color: red;">No atender</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

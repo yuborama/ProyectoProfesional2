@@ -8,7 +8,9 @@ Servicectrl.createService = (req,res)=>{
 Servicectrl.addService =async (req,res)=>{
   const activo = true;
   const {Nombre,descripcion,Precio}=req.body;
-  const NewService= new Service({Nombre,Precio,descripcion,activo})
+  image='/uploads/'+req.file.originalname;
+  console.log(image);
+  const NewService= new Service({Nombre,Precio,image,descripcion,activo})
   await NewService.save();
   req.flash('success_msg','servicio agregado');
   res.redirect('/admin/all_services');
@@ -19,6 +21,12 @@ Servicectrl.ListServices =async (req,res)=>{
   console.log(servicios);
   res.render('services/all_services',{servicios})
 }
+
+Servicectrl.ListadodeServices =async (req,res)=>{
+  const servicios = await Service.find({activo:true}).lean();
+  res.json(servicios)
+}
+
 
 Servicectrl.ModificService = (req,res)=>{
     res.send('modifica servicios');
