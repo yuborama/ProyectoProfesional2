@@ -1,0 +1,30 @@
+<table class="unstriped hover">
+    <thead>
+        <tr>
+            <th width="300">Nombre</th>
+            <th>Descripcion</th>
+            <th width="150">Precio</th>
+            <th width="160">Operaciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each servicios}}
+        <tr>
+            <td>{{Nombre}}</td>
+            <td>{{descripcion}}</td>
+            <td>{{Precio}}</td>
+            <td>
+                <div>
+                    <a class="button tiny primary" href="#">Modificar</a>
+                    <a class="button tiny alert" href="#">Eliminar</a>
+                </div>
+                <div>
+                    <a class="button  tiny expanded {{#if activo}}success{{else}}secondary{{/if}}"
+                        href="/admin/estatechange/{{_id}}"
+                        method="POST">{{#if activo}}Desactivar{{else}}Activar{{/if}}</a>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

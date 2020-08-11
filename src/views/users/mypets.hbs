@@ -1,0 +1,53 @@
+<h1>Mys pets</h1>
+<section class="lado grid-container fluid">
+  <div class="grid-x grid-padding-x">
+    <div class="cell small-6">
+      {{#each mascotas}}
+      <div class="card">
+        <div class="card-section">
+          <div class="foto">
+            <p>foto de la mascotas</p>
+          </div>
+          <div class="card">
+            <div class="card-divider">
+              <p>nombre de la mascota</p>
+            </div>
+            <div class="card-section">
+              <div></div>
+              <p>Genero:Hembra</p>
+              <p>Tamaño:Grande</p>
+              <p>Tipo:Ave</p>
+              <div>
+                <a href="/user/modific_pet/{{_id}}"><i class="fas fa-pencil-alt 2x"></i></a>
+                <a href="/user/new_cite/{{_id}}"><i class="fas fa-pencil-alt 2x"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{#if citesM}}
+
+    <aside id="content" class="shirk" data-sticky-container>
+      <div class="sticky" data-sticky data-margin-top="0" data-top-anchor="content">
+        {{#each citesM}}
+        <div class="card">
+          <div class="card_divider center">
+            {{servicio.Nombre}}
+          </div>
+          <div class="card-section">
+            {{pet.nombre}}
+            <div class="grid-contrainer">
+              <a class="button tiny primary" href="#">Modificar</a>
+              <a class="button tiny alert" href="#">Eliminar</a>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </aside>
+
+    {{/if}}
+  </div>
+</section>

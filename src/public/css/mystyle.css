@@ -1,4 +1,143 @@
-.center {
+.align-center{
     display: grid;
     justify-content: center;
 }
+/* <profile------------------------------ */
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+}
+
+.container-img {
+    border-radius: 50%;
+    background-color: blue;
+    height: 9.375rem;
+    width: 9.375rem;
+}
+
+/* <profile------------------------------ */
+
+/* <button------------------------------- */
+
+.btn, .img-avatar {
+    height: 5em;
+    width: 5em;
+    border-radius: 50%;
+}
+
+/* <button------------------------------- */
+
+/* --------------------------------------index---------------------------------------- */
+
+/* >parallax------------------------------------------ */
+
+.img-parallax {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/pichome.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.img-parallax .row {
+    padding: 2rem;
+    position: absolute;
+    top: 50%;
+    display: block;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* --------------------------------------index---------------------------------------- */
+
+/*---------------------------------- my pest---------------------------------------- */
+
+/* >datos--------------------------------- */
+
+.datos {
+    width: 90%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/* >card my pets-------------------------- */
+
+.mypest>.card {
+    width: 300px;
+    height: 350px;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 2px 2px 5px #b0bec5;
+}
+.services>.card{
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 2px 2px 5px #b0bec5;
+}
+
+.mypest>.card>.card-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mypest>.card>.card-divider {
+    height: 50px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.cabecera-m>a>i {
+    font-size: 25px;
+}
+
+.profile>.figure {
+    display: flex;
+    height: 3rem;
+    width: 3rem;
+    background-color: blue;
+    transform: rotate(45deg);
+    border-radius: 20%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.figure>a>i {
+    transform: rotate(45deg);
+    font-size: 25px;
+   color: white;
+}
+/* >services------------------------------------------------------------- */
+.services>div>div>div>div>.card{
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 5px #b0bec5;
+}
+.services>div>div>div>div>.card>.card-divider{
+    border-radius: 10px 10px 0px 0px;
+}
+
+/*---------------------------------- my pest---------------------------------------- */
+/* ------------------------------------Veterinario------------------------------------ */
+/* >card citas-------------------- */
+.Redondearcard {
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 2px 2px 5px #b0bec5;
+}
+
+.Redondearcard-divider {
+    height: 50px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+
+
+
+
+/* ------------------------------------Veterinario------------------------------------ */

@@ -1,0 +1,46 @@
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="menu-text"><a href="/">Veterinaria Patitas</a></li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="dropdown menu align-right" data-dropdown-menu>
+      <li>
+        {{#if user}}
+        {{#Autention user}}
+        {{#if rolus}}
+        <a>Mis mascotas</a>
+        <ul class="menu  align-center">
+          <li class="shrink"><a href="/user/my_pets">Mis mascotas</a></li>
+          <li class="shrink"><a href="/user/new_pet">Nueva mascota</a></li>
+        </ul>
+        {{/if}}
+        {{#if rolve}}
+      <li class="shrink"><a href="/user/my_pets">Citas del dia</a></li>
+      {{/if}}
+      {{#if rolad}}
+      <a href="">Servicios</a>
+        <ul class="menu  align-center">
+          <li class="shrink"><a href="/admin/all_services">Servicios</a></li>
+          <li class="shrink"><a href="/admin/new_service">Nuevo Servicio</a></li>
+        </ul>
+      <a href="">Nuevos Usuarios</a>
+        <ul class="menu  align-center">
+           <li class="shrink"><a href="/admin/new_admin">Nuevo Admin</a></li>
+          <li class="shrink"><a href="/admin/new_veterinary">Nuevo Veterinario</a></li>
+          <li class="shrink"><a href="/new_user">Nuevo Usuario</a></li>
+        </ul>
+      {{/if}}
+      <li><a href="/logout">Cerrar sesion</a></li>
+      {{/Autention}}
+      </li>
+      {{else}}
+      <li><a href="#">Contactanos</a></li>
+      <li><a href="/about">Somos nosotros</a></li>
+      <li><a href="/new_user">Registrarse</a></li>
+      <li><a href="/singin">Ingresar</a></li>
+      {{/if}}
+    </ul>
+  </div>
+</div>

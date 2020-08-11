@@ -1,3 +1,102 @@
- <h1>menu</h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem non aspernatur officia quos totam fugiat, voluptas quam aliquam deleniti rem, temporibus laborum consequatur possimus dolore facilis quis obcaecati nihil iste.</p>
-    <h1>footer</h1>
+<div class="reveal" id="exampleModal1" data-reveal>
+    <h1>Awesome. I Have It.</h1>
+    <p class="lead">Your couch. It is mine.</p>
+    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="img-parallax">
+    <div class="grid-contrainer flex-container middle">
+        <h2 style="padding-top:7em;">el mejor lugar para tus mascotas</h2>
+    </div>
+</div>
+<section class="nuestrocuidado">
+    <div id="sw-especies" class="swiper-container text-center">
+        <h2>A nuestro cuidado</h2>
+        <h6>Un lugar seguro para la mascota que amas</h6>
+        <div class="swiper-wrapper">
+            {{#each tipos}}
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="card-divider">
+                        <div class="img-avatar">
+                            <img src="{{image}}" alt="" style="width: 100%; height: 100%; border-radius: 50%" />
+                        </div>
+                    </div>
+                    <div class="card-section">
+                        <h3 id="especie">{{tipo}}</h3>
+                        <p>{{descripcion}}</p>
+                        <a id="botonver" class="button" data-open="exampleModal1">Ver</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{!--  <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div> --}}
+    </div>
+</section>
+
+<section id="servicios" class="grid-container fluid">
+    <div class="max-height grid-x grid-padding-x align-justify">
+        <div class="cell small-5 desc-services text-center align-center ">
+            <h2>Programa tu cita</h2>
+            <h4>atenciones</h4>
+            <div id="sw-desc-services" class="swiper-container">
+                <div class="swiper-wrapper">
+                    {{#each servicios}}
+                    <div class="swiper-slide">
+                        <div class="card">
+                            {{Nombre}}
+                            {{descripcion}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="cell small-7 img-services">
+            <div id="sw-img-services" class="swiper-container text-center">
+                <div class="swiper-wrapper " style="width:100%">
+                    {{#each servicios}}
+                    <div class="swiper-slide">
+                        <img src="{{image}}" alt="">
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="google-maps grid-container full">
+    <div class="max-height grid-x grid-padding-x align-justify">
+        <div class=" small-7" style="padding-left: 5%;">
+            <div class="embed-container">
+                <iframe allowfullscreen="" aria-hidden="false" frameborder="0" height="100%"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.5511856760845!2d-72.46878578590093!3d7.837231908672448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6646843e150d2b%3A0x6b74be32eddf70a1!2sUniversidad%20de%20Pamplona%2C%20Villa%20del%20Rosario!5e0!3m2!1ses!2sco!4v1588266707563!5m2!1ses!2sco"
+                    style="border:0;" tabindex="0" width="100%">
+                </iframe>
+            </div>
+        </div>
+        <div class="cell small-5 text-center">
+            <h2>Direccion y Horario </h2>
+            <h5>180 Main St Boston MA 021103</h5>
+            <h6 class="subheader">lunes 8am a 12pm - 2pm a 5 pm </h6>
+            <h6 class="subheader">martes 8am a 12pm - 2pm a 5 pm </h6>
+            <h6 class="subheader">miercoles 8am a 12pm - 2pm a 5 pm </h6>
+            <h6 class="subheader"> jueves 8am a 12pm - 2pm a 5 pm </h6>
+            <h6 class="subheader">viernes 8am a 12pm - 2pm a 5 pm </h6>
+            <h6 class="subheader">sabado 8am a 12pm - 2pm a 5 pm </h6>
+            <h6 class="subheader">domingo 8am a 12pm - 2pm a 5 pm </h6>
+            <a class="hollow button large" href="#">Contactar</a>
+        </div>
+    </div>
+</section>
